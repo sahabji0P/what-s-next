@@ -1,4 +1,4 @@
-# Copy the link below to view the PPT for the Project What's Next!
+# PPT for the Project What's Next!
 
 
 <!-- add Hyper Link -->
