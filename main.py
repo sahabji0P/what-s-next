@@ -46,24 +46,29 @@ while True:
     print("----------------------------------------------------------------------------------------------------------")
     print()
     # Print the top 5 hightest probability words
-    N = 5
+    N = 6
     word_list = []
     for i in itertools.islice(sortedDic.keys(), N):
-        print(i)
+        print("|------------------|")
+        print("   "+i)
         word_list.append(i)
         word_completer = WordCompleter(noDup, ignore_case=True)
         word_completer = WordCompleter(word_list)
         
+    print("|------------------|")
     print()
     
 
-    next_word = prompt("Enter the next word or '//exit' to exit the Application: ", completer=word_completer)
+    next_word = prompt("Enter the next word or '//exit' to exit the Application or '//clear' to reset the sentence: ", completer=word_completer)
+    if len(next_word.split()) > 1:
+        possible = next_word.split()[-1]
+    else:
+        possible = next_word
     sentence += " " + next_word
     
     if next_word == "//exit":
         break
+    elif next_word == "//clear":
+        sentence = ""
 
-    possible = next_word
     os.system('cls' if os.name == 'nt' else 'clear')
-
-    
